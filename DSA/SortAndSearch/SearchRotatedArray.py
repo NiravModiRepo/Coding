@@ -15,10 +15,13 @@ O(2log N)->O(log N)
 """
        
 
-
 def findValueInRotatedArray(n, k):
     
+    if len(n) == 0:
+        return -1
     
+    left = 0
+    right = len(n)-1
 
 
 
