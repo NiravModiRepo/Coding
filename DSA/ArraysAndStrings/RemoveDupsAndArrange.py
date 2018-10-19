@@ -11,6 +11,7 @@ def removeDupsAndArrange(string):
     result = ''
     alphabets='abcdefghijklmnopqrstuvwxyz'
     
+    #put words in a dictionary
     for i in range(len(string)):
         if string[i] not in wordDict:
             wordDict[string[i]]=1
