@@ -28,6 +28,7 @@ class Mutant:
         print(s)
         
         return
+    
     @staticmethod
     def greet():
         print("Greeting")
@@ -68,3 +69,22 @@ class Inhuman:
         print(s)
         
         return
+    
+"""
+Illumanati comics
+
+Mr. Fantastic - Reed Richards
+Iron Man - Tony Stark
+Ant Man - Hank Pym
+Hulk - Bruce Banner
+Black Panther - T'Challa
+Beast - Hank McCoy
+Professor X - Charles Xavier
+
+Justin Hammer
+Dr. Doom - Victor Van Doom
+Green Goblin - Norman Osborn
+Doc Ock - Otto Octavius
+The Leader - Samuel Sterns
+
+"""    
