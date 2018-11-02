@@ -24,6 +24,9 @@ class Solution:
         if len(s) < 1:
             return ""
         
+        if len(s) > 15:
+            return
+        
         #if the string is single character or already in the dictionary
         if s in r2i:
             return r2i[s]
