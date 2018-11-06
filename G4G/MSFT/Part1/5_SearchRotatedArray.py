@@ -11,7 +11,9 @@ Find starting point in log n
 Find value in log n
 O(2log N)->O(log N)
 
-@author: 22848
+@author: Nirav Modi
+
+LeetCode: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 """
        
 def findRotPoint(n, start, end):
@@ -56,8 +58,10 @@ def findValueInRotatedArray(n, k):
     if len(n) == 0:
         return -1
     
+	#Find the rotational point, it takes LogN time
     rotPoint = findRotPoint(n, 0, len(n)-1)
     
+	#Search either left or right of rotational point, takes LogN time
     if (k >= n[rotPoint]) and (k <= n[len(n)-1]):
         return binSearch(n, k, rotPoint, len(n)-1)
     else:

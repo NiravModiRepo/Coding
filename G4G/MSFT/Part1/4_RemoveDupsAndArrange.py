@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Remove Dups from a string and arrage its letters in order
+Remove Dups from a string and arrange its letters in order
 
 @author: Nirav Modi
+
+Leeetcode: 
+
+O(n) solution is better than the "set" nlogn solution
 """
 
 def removeDupsAndArrange(string):
@@ -16,7 +20,7 @@ def removeDupsAndArrange(string):
         if string[i] not in wordDict:
             wordDict[string[i]]=1
             
-    #arrage letters
+    #arrange letters
     for i in alphabets:
         if i in wordDict:
             result +=i
