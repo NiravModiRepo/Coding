@@ -39,83 +39,71 @@ dataDividends = []
 dataNetSales = []
 dataCashGenerated = []
 
-#DATA_ENTRY Net Income from Income Statement
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/net-income
-dataNetIncome.append(59531)
-dataNetIncome.append(48351)
-dataNetIncome.append(45687)
-dataNetIncome.append(53394)
-dataNetIncome.append(39510)
-dataNetIncome.append(37037)
-dataNetIncome.append(41733)
-dataNetIncome.append(25922)
-dataNetIncome.append(14013)
-dataNetIncome.append(8235)
-dataNetIncome.append(6119)
 
-#DATA_ENTRY Equity from Balance Sheet
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/total-share-holder-equity
-dataTotalEquity.append(107147)
-dataTotalEquity.append(134047)
-dataTotalEquity.append(128249)
-dataTotalEquity.append(119355)
-dataTotalEquity.append(111547)
-dataTotalEquity.append(123549)
-dataTotalEquity.append(118210)
-dataTotalEquity.append(76615)
-dataTotalEquity.append(47791)
-dataTotalEquity.append(31640)
-dataTotalEquity.append(22297)
+############################################################
+dataNetIncome.append(22111)
+dataNetIncome.append(15920)
+dataNetIncome.append(10188)
+dataNetIncome.append(3669)
+dataNetIncome.append(2925)
+dataNetIncome.append(1491)
+dataNetIncome.append(32)
+dataNetIncome.append(668)
+dataNetIncome.append(372)
+dataNetIncome.append(122)
+dataNetIncome.append(-56)
 
-#DATA_ENTRY Dividends from Cash Flow Statement
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/common-stock-dividends-paid
-dataDividends.append(13712)
-dataDividends.append(12769)
-dataDividends.append(12150)
-dataDividends.append(11561)
-dataDividends.append(11126)
-dataDividends.append(10564)
-dataDividends.append(2488)
+dataTotalEquity.append(84127)
+dataTotalEquity.append(74347)
+dataTotalEquity.append(59194)
+dataTotalEquity.append(44218)
+dataTotalEquity.append(36096)
+dataTotalEquity.append(15470)
+dataTotalEquity.append(11755)
+dataTotalEquity.append(4899)
+dataTotalEquity.append(2162)
+dataTotalEquity.append(0)
+dataTotalEquity.append(0)
+
+dataDividends.append(0)
+dataDividends.append(0)
+dataDividends.append(0)
+dataDividends.append(0)
+dataDividends.append(0)
+dataDividends.append(0)
+dataDividends.append(0)
 dataDividends.append(0)
 dataDividends.append(0)
 dataDividends.append(0)
 dataDividends.append(0)
 
-#DATA_ENTRY Sales from Income Statement
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/revenue
-dataNetSales.append(265595)
-dataNetSales.append(229234)
-dataNetSales.append(215639)
-dataNetSales.append(233715)
-dataNetSales.append(182795)
-dataNetSales.append(170910)
-dataNetSales.append(156508)
-dataNetSales.append(108249)
-dataNetSales.append(65225)
-dataNetSales.append(42905)
-dataNetSales.append(37491)
+dataNetSales.append(55838)
+dataNetSales.append(40653)
+dataNetSales.append(27638)
+dataNetSales.append(17928)
+dataNetSales.append(12466)
+dataNetSales.append(7872)
+dataNetSales.append(5089)
+dataNetSales.append(3711)
+dataNetSales.append(1974)
+dataNetSales.append(777)
+dataNetSales.append(272)
 
-#DATA_ENTRY Operating Cash from Cash Flow Statement
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/cash-flow-from-operating-activities
-dataCashGenerated.append(77434)
-dataCashGenerated.append(64225)
-dataCashGenerated.append(66231)
-dataCashGenerated.append(81266)
-dataCashGenerated.append(59713)
-dataCashGenerated.append(53666)
-dataCashGenerated.append(50856)
-dataCashGenerated.append(37529)
-dataCashGenerated.append(18595)
-dataCashGenerated.append(10159)
-dataCashGenerated.append(9596)
+dataCashGenerated.append(29274)
+dataCashGenerated.append(24216)
+dataCashGenerated.append(16108)
+dataCashGenerated.append(10320)
+dataCashGenerated.append(7326)
+dataCashGenerated.append(4222)
+dataCashGenerated.append(1612)
+dataCashGenerated.append(1549)
+dataCashGenerated.append(698)
+dataCashGenerated.append(155)
+dataCashGenerated.append(0)
 
-#DATA_ENTRY EPS
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/eps-earnings-per-share-diluted
-eps = 11.91
+eps = 7.57
 
-#DATA_ENTRY Highest PE Ratio from last 10 years
-#https://www.macrotrends.net/stocks/charts/AAPL/apple/pe-ratio
-highestPeRatio = 20.70
+highestPeRatio = 31.80
 
 ############################################################
 
@@ -210,13 +198,17 @@ windageCashGenerated = (growthRate3YearCashGenerated + growthRate5YearCashGenera
     
 windageRate = (windageNetIncome + windageEquityPlusDividends + windageNetSales + windageCashGenerated)/4
 print("Overall Windage Rate: ", windageRate)
+print("\n")
 
 ########################################################################################################################
 futureEps = eps
 
 windagePercent = windageRate/100
 
+print("Windage PE Ratio: Min of 2xWindage Rate:", 2*windageRate, ", Highest PE Ratio: ", highestPeRatio)
 windagePeRatio = min(2*windageRate, highestPeRatio)
+print("\n")
+
 
 ########################################################################################################################
 #Whole foods
@@ -228,17 +220,19 @@ windagePeRatio = min(2*windageRate, highestPeRatio)
 for i in range(0,10):
     futureEps *= (1+windagePercent)
     print("Year", i, "Price: ", futureEps)
+
+print("\n")
     
-print("Future EPS: ", futureEps)
+print("Step One: Future EPS: ", futureEps)
 
 #Step Two
 future10YearSharePrice = futureEps * windagePeRatio
-print("Future 10 Year Share Price: ", future10YearSharePrice)
+print("Step Two: Future 10 Year Share Price: ", future10YearSharePrice)
 
 #Step Three
 stickerPrice = future10YearSharePrice / 4
-print("Sticker Price: ", stickerPrice)
+print("Step Three: Sticker Price: ", stickerPrice)
 
 #Step Four
 marginOfSafetyPrice = stickerPrice/2
-print("Margin Of Safety Price: ", marginOfSafetyPrice)
+print("Step Four: Margin Of Safety Price: ", marginOfSafetyPrice)
