@@ -203,11 +203,11 @@ growthRate10YearCashGenerated = GetGrowthRate(10, yearlyGrowthCashGenerated)
 #print(growthRate10YearCashGenerated)
 ############################################################
 
-windageNetIncome = (growthRate3YearNetIncome + growthRate5YearNetIncome)/2
-windageEquityPlusDividends = (growthRate3YearEquityPlusDividends + growthRate5YearEquityPlusDividends)/2
-windageNetSales = (growthRate3YearNetSales + growthRate5YearNetSales)/2
-windageCashGenerated = (growthRate3YearCashGenerated + growthRate5YearCashGenerated)/2
-    
+windageNetIncome = (growthRate3YearNetIncome + growthRate5YearNetIncome + growthRate10YearNetIncome)/3
+windageEquityPlusDividends = (growthRate3YearEquityPlusDividends + growthRate5YearEquityPlusDividends + growthRate10YearEquityPlusDividends)/3
+windageNetSales = (growthRate3YearNetSales + growthRate5YearNetSales + growthRate10YearNetSales)/3
+windageCashGenerated = (growthRate3YearCashGenerated + growthRate5YearCashGenerated + growthRate10YearCashGenerated)/3
+  
 windageRate = (windageNetIncome + windageEquityPlusDividends + windageNetSales + windageCashGenerated)/4
 print("Overall Windage Rate: ", windageRate)
 print("\n")
