@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Sat Mar  9 11:40:44 2019
+
+@author: nam42589
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Tue Feb 12 21:48:25 2019
 
 @author: Nirav
@@ -117,6 +124,11 @@ eps = 11.91
 #https://www.macrotrends.net/stocks/charts/AAPL/apple/pe-ratio
 highestPeRatio = 20.70
 
+#DATA_ENTRY
+#https://finance.yahoo.com/quote/aapl/analysis/
+#Grwoth Estimates - Next 5 Years (per annum)
+analystWindageRate = 13
+
 ############################################################
 
 #yearlyGrowthNetIncome = [0]*(len(dataNetIncome)-1)
@@ -212,13 +224,15 @@ windageRate = (windageNetIncome + windageEquityPlusDividends + windageNetSales +
 print("Overall Windage Rate: ", windageRate)
 print("\n")
 
+windageGrowthRate = min(windageRate, analystWindageRate)
+
 ########################################################################################################################
 futureEps = eps
 
-windagePercent = windageRate/100
+windagePercent = windageGrowthRate/100
 
-print("Windage PE Ratio: Min of 2xWindage Rate:", 2*windageRate, ", Highest PE Ratio: ", highestPeRatio)
-windagePeRatio = min(2*windageRate, highestPeRatio)
+print("Windage PE Ratio: Min of 2xWindage Rate:", 2*windageGrowthRate, ", Highest PE Ratio: ", highestPeRatio)
+windagePeRatio = min(2*windageGrowthRate, highestPeRatio)
 print("\n")
 
 ########################################################################################################################

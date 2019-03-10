@@ -103,7 +103,7 @@ dataCashGenerated.append(0)
 
 eps = 7.57
 
-highestPeRatio = 31.80
+highestPeRatio = 90.64
 
 ############################################################
 
@@ -215,6 +215,8 @@ print("\n")
 #futureEps = 1.48
 #windagePercent = 0.14
 #windagePeRatio = 28
+
+print("windagePercent: ", windagePercent)
 
 #Step One
 for i in range(0,10):
