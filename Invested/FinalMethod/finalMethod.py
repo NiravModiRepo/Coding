@@ -7,7 +7,7 @@ Created on Sat Mar  9 17:03:18 2019
 
 import requests
 
-globalSymList = ['AAPL', 'GOOG', 'FB', 'AMZN', 'MSFT', 'NFLX', 'DIS', 'AMD', 'IBM']
+globalSymList = ['AAPL', 'GOOG', 'GOOGL', 'FB', 'AMZN', 'MSFT', 'NFLX', 'DIS', 'AMD', 'IBM']
 globalMainWeb = ""
 globalAnalystWeb = ""
 
